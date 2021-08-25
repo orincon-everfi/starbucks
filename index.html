@@ -1,0 +1,39 @@
+<html>
+
+<head>  
+<script type="text/javascript" src="https://embedding.tableauusercontent.com/dist-embedding/tableau.embedding.3.0.latest.beta.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+</head>
+  
+
+<body onload="initViz();">  
+  <div>
+    <h1>Tableau Javascript API Example: Starbucks Customer Survey</h1>
+
+    <h2>Task 2: Basic Embed</h2> 
+    <div id="basicEmbed" onload="printVizSize();"></div>
+
+    <h2>Task 3: Advanced Embed</h2>
+    <div id="dataTarget"></div>
+
+    <h4>Dashboard Download Options: PDF, CSV, XSLX, PNG</h4>
+    <p>Click the respective "Export to ..." button to download the dashboard.</p>
+    <button onclick="exportToPDF();">Export to PDF</button>
+    <button onclick="exportToCSV();">Export to CSV</button>
+    <button onclick="exportToExcel();">Export to Excel</button>
+    <button onclick="exportImage();">Export as Image</button>
+<!--     
+    <button
+onclick="getsize();">Get Viz Size
+    </button>
+ -->
+    <br>
+    <h4>View Raw Data</h4>
+    <p>Click the "Get Data" button to get the raw underlying data for the viz.</p>
+    <button id="getData" onclick="getUnderlyingData()" class="btn" disabled>Get Data</button>  
+  </div>
+
+<br><br><br><br>
+</body>
+
+</html>
