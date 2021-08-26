@@ -1,18 +1,6 @@
+let viz = document.getElementById('tableauViz').appendChild(viz); 
 
-import {TableauViz} from 'https://embedding.tableauusercontent.com/dist-embedding/tableau.embedding.3.0.latest.beta.js'
-
-let viz = new TableauViz();
-console.log('log viz',viz);
-viz.src = 'https://public.tableau.com/views/StarbucksCustomerSurveyDashboard/CustomerSurvey';
-viz.width='1240px';
-viz.height='640px';
-viz.hideTabs='true';
-viz.toolbar = 'hidden';
-
-
-document.getElementById('tableauViz').appendChild(viz); 
-
-
+console.log('Get viz from HTML instead of the other way around', viz);
 
 //
 // View Raw Data: Pretty Prints the raw JSON
