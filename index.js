@@ -1,23 +1,17 @@
-//
-// Initialize Tableau Javascript API Embed
-//
-var viz, sheet, table;
 
-function initViz() {
-    var containerDiv = document.getElementById("basicEmbed");
-    var url = "https://public.tableau.com/views/StarbucksCustomerSurveyDashboard/CustomerSurvey";
-    var options = {
-    width: "1240px",
-    height: "640px",
-    hideTabs: true,
-    hideToolbar: true,
-    onFirstInteractive: function () {
-      document.getElementById('getData').disabled = false; // Enable our button
-    }
-  };
-    
-  viz = new tableau.Viz(containerDiv, url, options);
-}
+import {TableauViz} from 'https://embedding.tableauusercontent.com/dist-embedding/tableau.embedding.3.0.latest.beta.js'
+
+let viz = new TableauViz();
+console.log('log viz',viz);
+viz.src = 'https://public.tableau.com/views/StarbucksCustomerSurveyDashboard/CustomerSurvey';
+viz.width='1240px';
+viz.height='640px';
+viz.hideTabs='true';
+viz.toolbar = 'hidden';
+
+
+document.getElementById('tableauViz').appendChild(viz); 
+
 
 
 //
@@ -45,7 +39,9 @@ function getUnderlyingData() {
 // Dashboard Download Options: PDF, CSV, XSLX, PNG
 //
 function exportToPDF() {
-    viz.showExportPDFDialog();
+  console.log('PDF 1', viz) ;
+  viz.showExportPDFDialog();
+  console.log('PDF 2'); 
 }
 
 function exportToCSV() {

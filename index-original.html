@@ -6,23 +6,14 @@
 </head>
   
 
-<body>  
+<body onload="initViz();">  
   <div>
-    <h1>Tableau Javascript API V3 Example: Starbucks Customer Survey</h1>
+    <h1>Tableau Javascript API Example: Starbucks Customer Survey</h1>
 
-    <h2>Task: Basic Embed</h2> 
-    
-    <tableau-viz id="tableauViz" 
-    src="https://public.tableau.com/views/StarbucksCustomerSurveyDashboard/CustomerSurvey" 
-    width= "1240px",
-    height= "640px",
-    hideTabs= true,
-    hideToolbar= true,>
-    </tableau-viz>
+    <h2>Task 2: Basic Embed</h2> 
+    <div id="basicEmbed" onload="printVizSize();"></div>
 
-<br>
-
-<h2>Task 3: Advanced Embed</h2>
+    <h2>Task 3: Advanced Embed</h2>
     <div id="dataTarget"></div>
 
     <h4>Dashboard Download Options: PDF, CSV, XSLX, PNG</h4>
@@ -31,7 +22,18 @@
     <button onclick="exportToCSV();">Export to CSV</button>
     <button onclick="exportToExcel();">Export to Excel</button>
     <button onclick="exportImage();">Export as Image</button>
-    
+<!--     
+    <button
+onclick="getsize();">Get Viz Size
+    </button>
+ -->
+    <br>
+    <h4>View Raw Data</h4>
+    <p>Click the "Get Data" button to get the raw underlying data for the viz.</p>
+    <button id="getData" onclick="getUnderlyingData()" class="btn" disabled>Get Data</button>  
+  </div>
+
+<br><br><br><br>
 </body>
 
 </html>
